@@ -66,6 +66,7 @@ export class GeminiClient {
   }
 
   async initialize(contentGeneratorConfig: ContentGeneratorConfig) {
+    console.info('=========>>>>>>> GeminiClient.initialize ');
     this.contentGenerator = await createContentGenerator(
       contentGeneratorConfig,
     );
