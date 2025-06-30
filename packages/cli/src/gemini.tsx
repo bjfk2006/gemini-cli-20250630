@@ -139,6 +139,7 @@ export async function main() {
   if (!process.env.SANDBOX) {
     const sandboxConfig = config.getSandbox();
     if (sandboxConfig) {
+      console.info('=========>>>>>>>  11111111111111');
       if (settings.merged.selectedAuthType) {
         // Validate authentication here because the sandbox will interfere with the Oauth2 web redirect.
         try {
