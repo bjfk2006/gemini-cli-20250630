@@ -173,7 +173,7 @@ export async function main() {
   // Render UI, passing necessary config values. Check that there is no command line question.
   if (process.stdin.isTTY && input?.length === 0) {
     console.info('=========>>>>>>>  input tty ui');
-    setWindowTitle(basename(workspaceRoot), settings);
+    setWindowTitle('GPTBOTS-CODER', settings);
     render(
       <React.StrictMode>
         <AppWrapper
