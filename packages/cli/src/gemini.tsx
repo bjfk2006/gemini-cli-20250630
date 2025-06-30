@@ -147,6 +147,7 @@ export async function main() {
           if (err) {
             throw new Error(err);
           }
+          console.dir(sandboxConfig);
           await config.refreshAuth(settings.merged.selectedAuthType);
         } catch (err) {
           console.error('Error authenticating:', err);
