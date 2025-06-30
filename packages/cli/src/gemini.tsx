@@ -137,9 +137,9 @@ export async function main() {
 
   // hop into sandbox if we are outside and sandboxing is enabled
   if (!process.env.SANDBOX) {
+    console.info('=========>>>>>>>  process.env.SANDBOX == null ');
     const sandboxConfig = config.getSandbox();
     if (sandboxConfig) {
-      console.info('=========>>>>>>>  11111111111111');
       if (settings.merged.selectedAuthType) {
         // Validate authentication here because the sandbox will interfere with the Oauth2 web redirect.
         try {
@@ -164,11 +164,15 @@ export async function main() {
       }
     }
   }
+  else{
+    console.info('=========>>>>>>>  process.env.SANDBOX = ',process.env.SANDBOX);
+  }
   let input = config.getQuestion();
   const startupWarnings = await getStartupWarnings();
 
   // Render UI, passing necessary config values. Check that there is no command line question.
   if (process.stdin.isTTY && input?.length === 0) {
+    console.info('=========>>>>>>>  input tty ui');
     setWindowTitle(basename(workspaceRoot), settings);
     render(
       <React.StrictMode>
