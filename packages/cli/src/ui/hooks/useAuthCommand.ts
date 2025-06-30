@@ -40,6 +40,7 @@ export const useAuthCommand = (
       }
 
       try {
+        console.info(`=========>>>>>>> useAuthCommand.useEffect`);
         setIsAuthenticating(true);
         await performAuthFlow(
           settings.merged.selectedAuthType as AuthType,
