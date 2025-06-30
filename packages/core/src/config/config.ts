@@ -244,7 +244,7 @@ export class Config {
       authMethod,
       this,
     );
-
+    console.info('=========>>>>>>> Config.refreshAuth');
     const gc = new GeminiClient(this);
     this.geminiClient = gc;
     this.toolRegistry = await createToolRegistry(this);
